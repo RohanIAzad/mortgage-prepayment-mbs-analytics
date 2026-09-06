@@ -36,7 +36,7 @@ This creates a risk for mortgage-backed securities:
 - **Faster prepayment** returns principal sooner, reduces future interest income, and creates reinvestment / contraction risk.
 - **Slower prepayment** keeps principal outstanding longer and creates extension exposure.
 
-A useful prepayment model therefore needs to do more than rank risk borrowers. Its probabilities ultimately affect forecasts of **pool SMM/CPR and projected cashflows**.
+A useful prepayment model therefore needs to do more than rank risk borrowers. Its probabilities ultimately affect forecasts of **pool SMM/CPR and projected cashflows**. (Discrimination and Calibration)
 
 ---
 
