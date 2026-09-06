@@ -84,7 +84,7 @@ The feature panel contains approximately **6.27M eligible next month observation
 features include- 
 borrower characteristics, loan structure, current balance/rate, seasoning, delinquency history, market rates, refinance incentive, and experimental burnout proxies.
 
---
+---
 
 ## 3. Borrower behavior: refinance incentive
 
