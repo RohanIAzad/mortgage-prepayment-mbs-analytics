@@ -208,7 +208,7 @@ In the deterministic cash-flow projection, each pool’s ML-derived SMM is held 
 - Overprediction in late 2025/early2026
 - Underprediction in some months like September 2025
 
---
+---
 
 ## Technology
 
