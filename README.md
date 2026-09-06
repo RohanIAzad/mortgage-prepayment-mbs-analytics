@@ -58,7 +58,6 @@ This produced **6,418,477 monthly performance records** spanning January 2020 th
 
 Distribution of loan-months:
 
-Markdown
 | | loans | avg_months | median_months | min_months | max_months |
 |---|---|---|---|---|---|
 | **0** | 150000 | 42.789847 | 44.0 | 1 | 75 |
