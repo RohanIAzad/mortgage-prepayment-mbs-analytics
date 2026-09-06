@@ -195,7 +195,7 @@ Cumulative principal timing
 
 This is the central mortgage-finance result: investors may ultimately receive similar principal dollars, but **not at the same time**.
 
-Under the simplified constant-SMM projection, projected lifetime interest equals roughly **23.6% of starting UPB for the high-refi pool**, versus **37.3% for the benchmark** and **42.4% for the low-refi pool**.
+In the deterministic cash-flow projection, each pool’s ML-derived SMM is held fixed over the projection horizon. Under this assumption, projected lifetime interest equals roughly 23.6% of starting UPB for the high-refi pool, versus 37.3% for the benchmark and 42.4% for the low-refi pool.
 
 ## 9. Limitations
 - Weaker discrimination in 2020-2021 vintages
