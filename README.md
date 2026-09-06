@@ -77,7 +77,7 @@ For each eligible active loan-month:
 
 This picture illustrates the structure of the target variable.
 
-For a loan that originated in April and assuming currently we are in July, predicting if the loan will prepay in the month of August. In August will predict if the loan will prepay in September if it has not already prepaid in August.Some of teh input features use events from the last 3 months such as if there was any 30 plus days of delinquency in the last 3 months (any_30plus_dq_last_3m), That is why t-1, t-2, t-3 is there.
+For a loan that originated in April and assuming currently we are in July, predicting if the loan will prepay in the month of August. In August will predict if the loan will prepay in September if it has not already prepaid in August. Some of the input features use events from the last 3 months such as if there was any 30 plus days of delinquency in the last 3 months (any_30plus_dq_last_3m), That is why t-1, t-2, t-3 is there.
 
 The feature panel contains approximately **6.27M eligible next month observations and 38,374 positive events**.
 
