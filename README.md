@@ -204,9 +204,13 @@ This is the central mortgage-finance result: investors may ultimately receive si
 In the deterministic cash-flow projection, each pool’s ML-derived SMM is held fixed over the projection horizon. Under this assumption, projected lifetime interest equals roughly 23.6% of starting UPB for the high-refi pool, versus 37.3% for the benchmark and 42.4% for the low-refi pool.
 
 ## 9. Limitations
-- Weaker discrimination in 2020-2021 vintages
-- Overprediction in late 2025/early2026
-- Underprediction in some months like September 2025
+- Equal-quarter sampling rather than population weighting.
+- Longitudinal temporal split can contain the same loan in multiple calendar partitions.
+- Fixed SMM in forward projection.
+- No stochastic rate paths/OAS.
+- Weaker discrimination in 2020-2021 vintages.
+- Overprediction in late 2025/early2026.
+- Underprediction in some months like September 2025.
 
 ---
 
