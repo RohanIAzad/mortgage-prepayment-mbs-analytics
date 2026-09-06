@@ -25,7 +25,7 @@ The implementation code and development notebooks are intentionally not publishe
 | Average CPR forecast bias | **+0.01 percentage points** |
 | Principal returned after 24 months | **50.0% high-refi vs 19.0% benchmark vs 13.8% low-refi** |
 
-![End-to-end analytical flow]
+[End-to-end analytical flow]
 <img width="1152" height="85" alt="00_workflow" src="https://github.com/user-attachments/assets/f4c4e333-51d3-4036-aaf4-e48189961aa1" />
 
 ## 1. Business problem
@@ -96,6 +96,68 @@ Observed next-month voluntary prepayment rises sharply with refinance incentive:
 - `0 to 50 bps`: approximately **0.95%**
 - `100 to 150 bps`: approximately **2.46%**
 - `150 to 200 bps`: approximately **3.10%**
+
+## 4. Modeling and out-of-time validation
+
+I compared an interpretable Logistic regression benchmark with LightGBM and XGBoost.
+
+The project uses a **calendar-time split rather than random loan-month split**:
+
+| Partition | Reporting period | Use |
+|---|---|---|
+| Train | Through Dec 2023 | Model fitting |
+| Validation | Jan-Dec 2024 | Model selection / tuning |
+| Locked test | Jan 2025-Feb 2026 | Final untouched evaluation |
+
+The same surviving mortgage can appear in multiple calendar partitions as it ages. Loan ID is not a model feature. This design evaluates **future-period portfolio forecasting*.
+
+The final LightGBM model achieved on the locked test set:
+
+- **ROC-AUC: 0.701**
+- **PR-AUC: 0.026**
+- **Actual event rate: 0.693%**
+- **Mean predicted probability: 0.730%**
+
+Out-of-time risk decile validation:
+<img width="662" height="392" alt="image" src="https://github.com/user-attachments/assets/ed1d3b8d-cc27-4140-8a95-18f3a16de762" />
+
+The highest predicted-risk decile experienced about **3.5x the population-average prepayment rate** and contained about **35% of all realized test prepayments**.
+
+Model selection emphasized **probability quality, downstream pool usefulness**, not ROC-AUC alone.
+
+---
+
+## 5. What drives the model?
+
+SHAP analysis shows that the strongest global model driver is **refinance incentive**, followed by **loan age / seasoning** and **PMMS**
+
+<img width="657" height="596" alt="image" src="https://github.com/user-attachments/assets/adac4344-b15f-429e-94ea-8a869f203bc5" />
+
+SHAP is used here to explain model behavior, not causality.
+
+---
+
+## 6. From loan probabilities to pool SMM and CPR
+
+For each reporting month, loan-level probabilities are aggregated using current UPB weights:
+
+**Pool SMM(t) = sum[UPB(i,t) x p(i,t)] / sum[UPB(i,t)]**
+
+Then:
+
+**CPR(t) = 1 - (1 - SMM(t))^12**
+
+UPB weighting is important because a $500,000 mortgage and a $50,000 mortgage should not contribute equally to expected pool principal runoff.
+
+Three comparison pools were used:
+
+- **Benchmark:** full eligible test population
+- **High Refi Incentive:** refinance incentive >= 100 bps
+- **Low Refi Incentive:** refinance incentive <= 0 bps
+
+Predicted VS realized CPR:
+<img width="665" height="395" alt="image" src="https://github.com/user-attachments/assets/fd587859-a5e0-48bb-8222-d7a4f3bcdf00" />
+
 
 
 
