@@ -25,7 +25,8 @@ The implementation code and development notebooks are intentionally not publishe
 | Average CPR forecast bias | **+0.01 percentage points** |
 | Principal returned after 24 months | **50.0% high-refi vs 19.0% benchmark vs 13.8% low-refi** |
 
-[End-to-end analytical flow]
+End-to-end analytical flow
+
 <img width="1152" height="85" alt="00_workflow" src="https://github.com/user-attachments/assets/f4c4e333-51d3-4036-aaf4-e48189961aa1" />
 
 ## 1. Business problem
@@ -88,6 +89,7 @@ A core mortgage feature is:
 Positive values mean the borrower's existing coupon is above the prevailing market mortgage rate, making refinancing more economically attractive.
 
 Observed prepayment by refinance incentive
+
 <img width="1262" height="365" alt="image" src="https://github.com/user-attachments/assets/76e966b6-71f7-4069-b36d-28d95a224080" />
 
 Observed next-month voluntary prepayment rises sharply with refinance incentive:
@@ -119,6 +121,7 @@ The final LightGBM model achieved on the locked test set:
 - **Mean predicted probability: 0.730%**
 
 Out-of-time risk decile validation:
+
 <img width="662" height="392" alt="image" src="https://github.com/user-attachments/assets/ed1d3b8d-cc27-4140-8a95-18f3a16de762" />
 
 The highest predicted-risk decile experienced about **3.5x the population-average prepayment rate** and contained about **35% of all realized test prepayments**.
@@ -156,6 +159,7 @@ Three comparison pools were used:
 - **Low Refi Incentive:** refinance incentive <= 0 bps
 
 Predicted VS realized CPR:
+
 <img width="665" height="395" alt="image" src="https://github.com/user-attachments/assets/fd587859-a5e0-48bb-8222-d7a4f3bcdf00" />
 
 
