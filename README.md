@@ -74,6 +74,28 @@ For a loan that originated in April and assuming currently we are in July, predi
 
 The feature panel contains approximately **6.27M eligible next month observations and 38,374 positive events**.
 
+features include- 
+borrower characteristics, loan structure, current balance/rate, seasoning, delinquency history, market rates, refinance incentive, and experimental burnout proxies.
+
+--
+
+## 3. Borrower behavior: refinance incentive
+
+A core mortgage feature is:
+
+**Refinance incentive = current borrower mortgage rate - prevailing PMMS rate**
+
+Positive values mean the borrower's existing coupon is above the prevailing market mortgage rate, making refinancing more economically attractive.
+
+Observed prepayment by refinance incentive
+<img width="1262" height="365" alt="image" src="https://github.com/user-attachments/assets/76e966b6-71f7-4069-b36d-28d95a224080" />
+
+Observed next-month voluntary prepayment rises sharply with refinance incentive:
+
+- `< -300 bps`: approximately **0.35%**
+- `0 to 50 bps`: approximately **0.95%**
+- `100 to 150 bps`: approximately **2.46%**
+- `150 to 200 bps`: approximately **3.10%**
 
 
 
