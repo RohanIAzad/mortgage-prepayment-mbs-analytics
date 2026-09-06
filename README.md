@@ -162,6 +162,14 @@ Predicted VS realized CPR:
 
 <img width="665" height="395" alt="image" src="https://github.com/user-attachments/assets/fd587859-a5e0-48bb-8222-d7a4f3bcdf00" />
 
+Average holdout-period results:
 
+| Pool | Predicted CPR | Realized CPR |
+|---|---:|---:|
+| Benchmark | **8.03%** | **8.02%** |
+| High Refi Incentive | **28.59%** | **29.62%** |
+| Low Refi Incentive | **4.95%** | **4.97%** |
+
+Across monthly holdout forecasts, CPR MAE was approximately **1.05 percentage points**, RMSE **1.43 pp**, and average bias **+0.01 pp**.
 
 
