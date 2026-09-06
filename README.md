@@ -172,4 +172,40 @@ Average holdout-period results:
 
 Across monthly holdout forecasts, CPR MAE was approximately **1.05 percentage points**, RMSE **1.43 pp**, and average bias **+0.01 pp**.
 
+---
+
+## 7. cash flow inpact
+
+I then passed the pool prepayment assumptions into a simplified deterministic mortgage cash-flow engine using starting UPB, WAC, WAM and ML-derived SMM.
+
+Each projection month calculates scheduled payment, interest, scheduled principal, expected prepayment, total principal, ending balance, and total cash flow.
+
+Cumulative principal timing
+
+<img width="811" height="356" alt="image" src="https://github.com/user-attachments/assets/584a0785-f1d4-44b6-86aa-e6c3e9dc928f" />
+
+### Cumulative principal returned
+
+| Horizon | High refi | Benchmark | Low refi |
+|---|---:|---:|---:|
+| 12 months | 29.3% | 9.9% | 7.1% |
+| 24 months | **50.0%** | **19.0%** | **13.8%** |
+| 60 months | **82.5%** | **41.7%** | **31.8%** |
+| 120 months | 97.0% | 67.8% | 56.2% |
+
+This is the central mortgage-finance result: investors may ultimately receive similar principal dollars, but **not at the same time**.
+
+Under the simplified constant-SMM projection, projected lifetime interest equals roughly **23.6% of starting UPB for the high-refi pool**, versus **37.3% for the benchmark** and **42.4% for the low-refi pool**.
+
+## 9. Limitations
+- Weaker discrimination in 2020-2021 vintages
+- Overprediction in late 2025/early2026
+- Underprediction in some months like September 2025
+
+--
+
+## Technology
+
+Python, DuckDB, Parquet, pandas, NumPy, scikit-learn, LightGBM, XGBoost, SHAP and Matplotlib.
+
 
