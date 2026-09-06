@@ -56,6 +56,13 @@ I sampled **9,375 unique mortgages from each of the 16 origination quarters**, p
 
 This produced **6,418,477 monthly performance records** spanning January 2020 through March 2026.
 
+Distribution of loan-months:
+
+Markdown
+| | loans | avg_months | median_months | min_months | max_months |
+|---|---|---|---|---|---|
+| **0** | 150000 | 42.789847 | 44.0 | 1 | 75 |
+
 ## Prediction target
 
 The primary target is **next month voluntary prepayment**
