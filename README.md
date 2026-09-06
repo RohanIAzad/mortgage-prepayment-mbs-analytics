@@ -117,7 +117,7 @@ The project uses a **calendar-time split rather than random loan-month split**:
 | Validation | Jan-Dec 2024 | Model selection / tuning |
 | Locked test | Jan 2025-Feb 2026 | Final untouched evaluation |
 
-The same surviving mortgage can appear in multiple calendar partitions as it ages. Loan ID is not a model feature. This design evaluates **future-period portfolio forecasting*.
+The same surviving mortgage can appear in multiple calendar partitions as it ages. Loan ID is not a model feature. This design evaluates **future-period portfolio forecasting**.
 
 The final LightGBM model achieved on the locked test set:
 
