@@ -55,5 +55,25 @@ I sampled **9,375 unique mortgages from each of the 16 origination quarters**, p
 
 This produced **6,418,477 monthly performance records** spanning January 2020 through March 2026.
 
+## Prediction target
+
+The primary target is **next month voluntary prepayment**
+
+For each eligible active loan-month:
+
+- `1` = the mortgage voluntarily prepays in the following month
+- `0` = it remnains eligible without voluntary prepayment in the following month
+- termination month observations and insufficiently oberved future periods are not treated as ordinary negative observations.
+- The months on which voluntary payment occcurs are ommited from the observation because the target is 1 month prepayment.
+
+<img width="242" height="537" alt="image" src="https://github.com/user-attachments/assets/4d696766-cf19-4f14-9fe8-b7080262d55c" />
+
+This picture illustrates the structure of the target variable.
+
+For a loan that originated in April and assuming currently we are in July, predicting if the loan will prepay in the month of August. In August will predict if the loan will prepay in September if it has not already prepaid in August.Some of teh input features use events from the last 3 months such as if there was any 30 plus days of delinquency in the last 3 months (any_30plus_dq_last_3m), That is why t-1, t-2, t-3 is there.
+
+The feature panel contains approximately **6.27M eligible next month observations and 38,374 positive events**.
+
+
 
 
