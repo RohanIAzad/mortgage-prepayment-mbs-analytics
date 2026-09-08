@@ -8,7 +8,7 @@ This project asks a mortgage-finance question rather than a generic classificati
 
 The implementation code and development notebooks are intentionally not published in this repository. This public version focuses on the **problem framing, methodology, validation, mortgage interpretation, results, limitations and investor implications**
 
-[**Read the full 7 page case study (PDF)**](....)
+[**Read the full 10 page case study (PDF)**](ML%20Driven%20Mortgage%20Prepayment%20MBS%20Case%20Study.pdf)
 
 ---
 
